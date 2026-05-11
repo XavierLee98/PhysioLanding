@@ -1,0 +1,82 @@
+---
+const steps = [
+  {
+    number: '01',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>`,
+    word: 'Recover',
+    title: 'Assess & Restore',
+    desc: 'We start with a thorough clinical assessment to understand your condition, pain triggers, and movement limitations — then build a precise treatment plan to relieve pain and restore function.',
+    color: 'from-violet-500 to-purple-600',
+    light: 'bg-violet-50 border-violet-100',
+    tag: 'text-violet-600',
+  },
+  {
+    number: '02',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    word: 'Strengthen',
+    title: 'Rebuild & Condition',
+    desc: 'Once pain is under control, we rebuild strength, stability, and movement quality through progressive exercise therapy — closing the gap between recovery and full capability.',
+    color: 'from-purple-500 to-indigo-600',
+    light: 'bg-indigo-50 border-indigo-100',
+    tag: 'text-indigo-600',
+  },
+  {
+    number: '03',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>`,
+    word: 'Perform',
+    title: 'Return & Excel',
+    desc: 'The final phase returns you to the activities, sport, or work you love — stronger and more resilient than before, with a prevention plan to protect your long-term health.',
+    color: 'from-indigo-500 to-blue-600',
+    light: 'bg-blue-50 border-blue-100',
+    tag: 'text-blue-600',
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="inline-block bg-purple-50 border border-purple-200 text-purple-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        Our Approach
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+        Recover &middot; Strengthen &middot; <span class="gradient-text">Perform</span>
+      </h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+        Every patient follows our proven three-phase methodology — from pain relief through to peak performance.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative grid lg:grid-cols-3 gap-8">
+
+      <!-- Connecting line (desktop only) -->
+      <div class="hidden lg:block absolute top-14 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-0.5 bg-gradient-to-r from-violet-200 via-purple-200 to-indigo-200 z-0" />
+
+      {steps.map((step) => (
+        <div class="relative z-10 flex flex-col items-center text-center group">
+          <!-- Number + icon circle -->
+          <div class={`w-28 h-28 rounded-full bg-gradient-to-br ${step.color} flex flex-col items-center justify-center text-white shadow-lg mb-6 group-hover:scale-105 transition-transform duration-300`}>
+            <Fragment set:html={step.icon} />
+            <span class="text-xs font-bold mt-1 opacity-80">{step.number}</span>
+          </div>
+
+          <!-- Card -->
+          <div class={`w-full border rounded-2xl p-6 ${step.light}`}>
+            <span class={`text-xs font-bold uppercase tracking-widest ${step.tag} mb-2 block`}>{step.word}</span>
+            <h3 class="text-xl font-extrabold text-slate-900 mb-3">{step.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a href="#contact" class="btn-primary inline-block">Start Your Recovery Today</a>
+    </div>
+
+  </div>
+</section>

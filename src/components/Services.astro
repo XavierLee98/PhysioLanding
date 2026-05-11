@@ -1,0 +1,526 @@
+---
+type Service = {
+  id: number;
+  category: string;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  whoFor: string;
+  howItWorks: string;
+  image: string;
+  duration: string;
+  sessions: string;
+  badge: string;
+};
+
+const services: Service[] = [
+  // ── Rehabilitation ────────────────────────────────────────────────────────
+  {
+    id: 1, category: "Rehabilitation", badge: "bg-violet-100 text-violet-700",
+    title: "Orthopedic Therapy",
+    shortDesc: "Restore optimal function after bone, joint, and muscle injuries.",
+    fullDesc: "Our orthopedic therapy program addresses a broad range of musculoskeletal conditions — from fractures and sprains to joint replacements and chronic arthritis. Therapists combine hands-on mobilization, targeted strength training, and modalities like ultrasound and electrical stimulation to reduce pain, rebuild strength, and restore full mobility.",
+    whoFor: "Patients recovering from fractures, sprains, joint replacements, osteoarthritis, tendon injuries, and post-trauma musculoskeletal conditions.",
+    howItWorks: "A thorough musculoskeletal assessment is followed by a program combining manual therapy, targeted strengthening, and progressive functional exercises to restore full movement.",
+    image: "https://picsum.photos/seed/orthopedic/800/500",
+    duration: "45–60 min", sessions: "8–12 sessions",
+  },
+  {
+    id: 2, category: "Rehabilitation", badge: "bg-violet-100 text-violet-700",
+    title: "Post-Surgical Rehabilitation",
+    shortDesc: "Accelerate recovery and regain full function after surgery.",
+    fullDesc: "Following surgery — orthopedic, cardiac, or abdominal — structured rehabilitation is critical. Our post-surgical programs are tailored to your procedure, restoring range of motion, preventing scar tissue complications, rebuilding muscle strength, and safely progressing you back to daily activities.",
+    whoFor: "Anyone recovering from orthopedic, cardiac, or abdominal surgery including knee/hip replacements, rotator cuff repair, and spinal procedures.",
+    howItWorks: "Your program is developed in consultation with your surgeon, progressing through controlled mobilization, strength rebuilding, and functional activity training at each stage of healing.",
+    image: "https://picsum.photos/seed/surgery/800/500",
+    duration: "60 min", sessions: "12–20 sessions",
+  },
+  {
+    id: 3, category: "Rehabilitation", badge: "bg-violet-100 text-violet-700",
+    title: "Spinal Rehabilitation",
+    shortDesc: "Targeted treatment for back pain, neck pain, and spinal conditions.",
+    fullDesc: "Chronic back pain, herniated discs, sciatica, and postural imbalances all respond well to targeted spinal rehabilitation. We use the McKenzie Method, core stabilization, manual therapy, and postural retraining to decompress the spine, strengthen supporting muscles, and create lasting relief.",
+    whoFor: "Individuals with chronic back or neck pain, herniated discs, sciatica, spondylosis, postural imbalances, or those recovering from spinal surgery.",
+    howItWorks: "Assessment identifies posture, movement patterns, and pain triggers. Treatment combines manual therapy, core stabilization training, and education to address root causes and prevent recurrence.",
+    image: "https://picsum.photos/seed/spinalcare/800/500",
+    duration: "45 min", sessions: "10–16 sessions",
+  },
+  {
+    id: 4, category: "Rehabilitation", badge: "bg-violet-100 text-violet-700",
+    title: "Aquatic Therapy",
+    shortDesc: "Low-impact water-based exercises for pain-free rehabilitation.",
+    fullDesc: "The buoyancy of water reduces joint stress by up to 90%, making aquatic therapy ideal for patients with severe pain, arthritis, or early post-surgical recovery. Our heated therapy pool enables guided exercise, gait training, and range-of-motion work in a safe, supportive environment.",
+    whoFor: "Patients with severe joint pain, obesity, osteoarthritis, fibromyalgia, or those unable to exercise comfortably on land due to pain or post-surgical restrictions.",
+    howItWorks: "Sessions take place in our heated therapy pool guided by a physiotherapist. Water buoyancy reduces joint load while resistance progressively builds strength as your condition improves.",
+    image: "https://picsum.photos/seed/aquapool/800/500",
+    duration: "45 min", sessions: "10–15 sessions",
+  },
+  {
+    id: 5, category: "Rehabilitation", badge: "bg-violet-100 text-violet-700",
+    title: "Geriatric Rehabilitation",
+    shortDesc: "Specialized care to maintain independence and mobility in older adults.",
+    fullDesc: "As we age, mobility, balance, and strength naturally decline. Our geriatric program addresses conditions like osteoporosis, post-fall recovery, and general deconditioning. We focus on safe functional movement, fall prevention, and preserving independence in daily life.",
+    whoFor: "Older adults managing age-related mobility decline, osteoporosis, post-fall recovery, joint replacement, or seeking to maintain independent daily function.",
+    howItWorks: "A full functional assessment identifies key movement deficits. Programs focus on balance, gait retraining, strength, and practical home safety strategies with regular progress reviews.",
+    image: "https://picsum.photos/seed/eldercare/800/500",
+    duration: "45 min", sessions: "12–20 sessions",
+  },
+
+  // ── Sports & Performance ──────────────────────────────────────────────────
+  {
+    id: 6, category: "Sports & Performance", badge: "bg-green-100 text-green-700",
+    title: "Sports Medicine",
+    shortDesc: "Expert diagnosis and treatment for sports and activity-related injuries.",
+    fullDesc: "From ligament tears and tendinopathies to stress fractures and overuse injuries, our sports medicine team delivers evidence-based care that gets athletes back to peak performance. We combine biomechanical analysis, sport-specific rehabilitation, and education to treat the injury and address its root cause.",
+    whoFor: "Athletes and active individuals of all levels with acute injuries (sprains, tears), overuse injuries (tendinopathy, stress fractures), or sports-related pain limiting performance.",
+    howItWorks: "Biomechanical assessment identifies the injury mechanism and contributing factors. A sport-specific rehabilitation program is built around your timeline with load management and progressive return milestones.",
+    image: "https://picsum.photos/seed/sportmed/800/500",
+    duration: "60 min", sessions: "8–16 sessions",
+  },
+  {
+    id: 7, category: "Sports & Performance", badge: "bg-green-100 text-green-700",
+    title: "Athletic Performance Training",
+    shortDesc: "Science-backed programs to optimize strength, speed, and endurance.",
+    fullDesc: "Move beyond injury recovery with our athletic performance program. Using movement screening, force plate analysis, and individualized training protocols, we identify performance limiters and build programs that improve power, agility, speed, and sport-specific endurance — for athletes at every level.",
+    whoFor: "Competitive and recreational athletes looking to improve speed, power, agility, or sport-specific endurance beyond standard rehabilitation goals.",
+    howItWorks: "Movement screening and performance testing establish your baseline. A periodized training program targeting your weakest links is designed, with ongoing reassessment to track gains.",
+    image: "https://picsum.photos/seed/athletic/800/500",
+    duration: "60–90 min", sessions: "Ongoing",
+  },
+  {
+    id: 8, category: "Sports & Performance", badge: "bg-green-100 text-green-700",
+    title: "Injury Prevention",
+    shortDesc: "Proactive screening and conditioning to prevent injuries before they happen.",
+    fullDesc: "Our injury prevention program uses movement screening (FMS), biomechanical assessment, and musculoskeletal testing to identify vulnerability before injury strikes. We design individualized conditioning protocols for teams and individuals to reduce injury incidence and protect long-term athletic health.",
+    whoFor: "Athletes, sports teams, and active individuals who want to reduce injury risk proactively — especially those with a history of recurring injuries.",
+    howItWorks: "Functional Movement Screening identifies asymmetries and high-risk patterns. A targeted conditioning and movement correction program is prescribed to address vulnerabilities before they become injuries.",
+    image: "https://picsum.photos/seed/preventsport/800/500",
+    duration: "60 min", sessions: "6–8 sessions",
+  },
+  {
+    id: 9, category: "Sports & Performance", badge: "bg-green-100 text-green-700",
+    title: "Return-to-Sport Program",
+    shortDesc: "Structured progression back to full competition after injury.",
+    fullDesc: "Returning to sport too soon is the leading cause of re-injury. Our return-to-sport program uses objective benchmarks — strength tests, movement quality, and psychological readiness — to guide a gradual, evidence-based progression from rehabilitation through full competitive return.",
+    whoFor: "Athletes recovering from significant injuries (ACL tears, fractures, muscle ruptures) ready to transition from rehabilitation toward full training and competition.",
+    howItWorks: "Objective strength and movement benchmarks guide each phase. You progress through sport-specific drills, monitored training loads, and psychological readiness assessment before clearance.",
+    image: "https://picsum.photos/seed/returnplay/800/500",
+    duration: "60 min", sessions: "4–8 sessions",
+  },
+
+  // ── Neurological ──────────────────────────────────────────────────────────
+  {
+    id: 10, category: "Neurological", badge: "bg-blue-100 text-blue-700",
+    title: "Neurological Rehabilitation",
+    shortDesc: "Comprehensive care for brain, spine, and nervous system conditions.",
+    fullDesc: "Neurological physiotherapy targets conditions such as multiple sclerosis, spinal cord injury, traumatic brain injury, and Guillain-Barre syndrome. We use neuroplasticity-driven techniques including task-specific training, constraint-induced movement therapy, and neuromuscular re-education to maximize functional recovery.",
+    whoFor: "Patients with multiple sclerosis, spinal cord injury, traumatic brain injury, Guillain-Barre syndrome, and other neurological conditions affecting movement and function.",
+    howItWorks: "Therapists use neuroplasticity-based techniques including repetitive task training and sensorimotor re-education, building intensity progressively as neural recovery is observed.",
+    image: "https://picsum.photos/seed/neurorehab/800/500",
+    duration: "60 min", sessions: "16–30 sessions",
+  },
+  {
+    id: 11, category: "Neurological", badge: "bg-blue-100 text-blue-700",
+    title: "Stroke Recovery",
+    shortDesc: "Intensive rehabilitation to restore movement and independence after stroke.",
+    fullDesc: "The brain's ability to rewire itself — neuroplasticity — is the foundation of stroke recovery. Our program delivers high-intensity, repetition-based therapy targeting upper limb function, gait retraining, and ADL independence, with regular goal-setting and family education integrated throughout.",
+    whoFor: "Stroke survivors at any stage — from acute hospital discharge through community reintegration — experiencing weakness, spasticity, balance issues, or difficulty with daily tasks.",
+    howItWorks: "High-repetition, task-specific therapy targets affected limbs and gait. Family members are trained to support home practice, maximizing the neuroplastic window for recovery.",
+    image: "https://picsum.photos/seed/strokecare/800/500",
+    duration: "60–90 min", sessions: "20–40 sessions",
+  },
+  {
+    id: 12, category: "Neurological", badge: "bg-blue-100 text-blue-700",
+    title: "Balance & Vestibular Therapy",
+    shortDesc: "Targeted treatment for dizziness, vertigo, and balance disorders.",
+    fullDesc: "Vestibular disorders — including BPPV, labyrinthitis, and central balance dysfunction — cause debilitating dizziness and increase fall risk. Our certified vestibular therapists use repositioning maneuvers, gaze stabilization, and balance retraining to resolve symptoms and restore confidence in movement.",
+    whoFor: "Patients experiencing dizziness, vertigo (especially BPPV), unsteadiness, nausea with movement, or those at high fall risk due to balance impairment.",
+    howItWorks: "A vestibular assessment identifies the specific dysfunction. Treatment may include Epley maneuvers, gaze stabilization exercises, and progressive balance challenges on stable and unstable surfaces.",
+    image: "https://picsum.photos/seed/balancetherapy/800/500",
+    duration: "45–60 min", sessions: "4–12 sessions",
+  },
+  {
+    id: 13, category: "Neurological", badge: "bg-blue-100 text-blue-700",
+    title: "Parkinson's Management",
+    shortDesc: "Movement-focused therapy to maintain function and quality of life.",
+    fullDesc: "Parkinson's disease progressively affects motor control, balance, and gait. Our LSVT BIG and PWR! certified therapists deliver amplitude-focused movement training, gait retraining, and fall prevention strategies to help patients maintain independence and delay functional decline.",
+    whoFor: "Individuals diagnosed with Parkinson's disease at any stage who wish to maintain movement quality, independence, and reduce fall risk.",
+    howItWorks: "LSVT BIG and PWR! programs focus on large-amplitude movement practice, gait training with cueing, and fall prevention strategies. Family education and home exercise programs are included.",
+    image: "https://picsum.photos/seed/parkinsons/800/500",
+    duration: "60 min", sessions: "Ongoing",
+  },
+
+  // ── Pain Management ───────────────────────────────────────────────────────
+  {
+    id: 14, category: "Pain Management", badge: "bg-orange-100 text-orange-700",
+    title: "Chronic Pain Management",
+    shortDesc: "Holistic strategies to reduce long-term pain and restore quality of life.",
+    fullDesc: "Chronic pain — whether from fibromyalgia, CRPS, or persistent musculoskeletal conditions — requires a biopsychosocial approach. We combine graded exercise exposure, pain neuroscience education, manual therapy, and pacing strategies to break the pain cycle and rebuild function.",
+    whoFor: "Adults living with persistent pain including fibromyalgia, CRPS, chronic low back pain, widespread musculoskeletal pain, or pain following injury that has not resolved.",
+    howItWorks: "We begin with a pain education session to reframe your understanding of pain. Graded activity exposure, pacing strategies, and movement retraining are gradually introduced to rebuild confidence and function.",
+    image: "https://picsum.photos/seed/chronicpain/800/500",
+    duration: "60 min", sessions: "12–20 sessions",
+  },
+  {
+    id: 15, category: "Pain Management", badge: "bg-orange-100 text-orange-700",
+    title: "Manual Therapy",
+    shortDesc: "Skilled hands-on techniques to restore joint mobility and reduce pain.",
+    fullDesc: "Manual therapy encompasses joint mobilization, manipulation, myofascial release, and trigger point therapy to restore tissue mobility, reduce pain, and improve neuromuscular function. Most effective when combined with active exercise and movement retraining for spine, shoulder, hip, and limb conditions.",
+    whoFor: "Patients with joint stiffness, restricted range of motion, soft tissue tightness, or acute/chronic pain in the spine, shoulder, hip, knee, or limbs.",
+    howItWorks: "After assessing joint mobility and tissue quality, your therapist applies targeted mobilization or soft tissue techniques, followed by exercises to maintain the gains achieved.",
+    image: "https://picsum.photos/seed/manualtherapy/800/500",
+    duration: "45 min", sessions: "6–10 sessions",
+  },
+  {
+    id: 16, category: "Pain Management", badge: "bg-orange-100 text-orange-700",
+    title: "Dry Needling",
+    shortDesc: "Precise trigger point release to relieve muscular pain and tightness.",
+    fullDesc: "Dry needling targets myofascial trigger points using thin filiform needles to elicit a local twitch response, reset neuromuscular function, and provide rapid pain relief. Highly effective for neck pain, headaches, shoulder dysfunction, and lower limb conditions when combined with exercise therapy.",
+    whoFor: "Individuals with myofascial pain, persistent muscle tightness, tension headaches, shoulder pain, neck pain, or lower limb conditions with identifiable trigger points.",
+    howItWorks: "Trigger points are located by palpation and confirmed by your pain response. Fine needles are inserted to elicit a twitch, followed by stretching and movement retraining to maintain results.",
+    image: "https://picsum.photos/seed/dryneedle/800/500",
+    duration: "30–45 min", sessions: "4–8 sessions",
+  },
+  {
+    id: 17, category: "Pain Management", badge: "bg-orange-100 text-orange-700",
+    title: "Cardiovascular Rehabilitation",
+    shortDesc: "Medically supervised exercise programs for heart health and recovery.",
+    fullDesc: "Following a cardiac event or surgery, our cardiovascular rehabilitation program delivers monitored exercise prescription, lifestyle counseling, and risk factor management. Our goal is to improve functional capacity, reduce re-hospitalization risk, and support long-term cardiovascular health.",
+    whoFor: "Patients post-myocardial infarction, cardiac surgery (bypass, valve replacement), heart failure, or those managing hypertension and cardiovascular risk factors.",
+    howItWorks: "Exercise is prescribed based on a graded fitness assessment and cardiac monitoring. Sessions progress from low-intensity movement to aerobic conditioning, with lifestyle counseling at each stage.",
+    image: "https://picsum.photos/seed/cardiorehab/800/500",
+    duration: "60 min", sessions: "24–36 sessions",
+  },
+
+  // ── Pediatric & Women's ───────────────────────────────────────────────────
+  {
+    id: 18, category: "Pediatric & Women's", badge: "bg-pink-100 text-pink-700",
+    title: "Pediatric Physiotherapy",
+    shortDesc: "Supporting children's movement, development, and recovery.",
+    fullDesc: "From developmental delays and cerebral palsy to sports injuries and postural concerns, our pediatric physiotherapists use play-based, family-centered approaches to help children reach their movement milestones and participate fully in the activities they love.",
+    whoFor: "Children from infancy through adolescence with developmental delays, cerebral palsy, muscular dystrophy, sports injuries, scoliosis, or coordination difficulties.",
+    howItWorks: "Assessment involves the child's caregivers and uses age-appropriate play-based activities to engage the child in therapeutic movement. Goals are set collaboratively with parents and reviewed regularly.",
+    image: "https://picsum.photos/seed/pediatric/800/500",
+    duration: "45 min", sessions: "Varies",
+  },
+  {
+    id: 19, category: "Pediatric & Women's", badge: "bg-pink-100 text-pink-700",
+    title: "Women's Health & Pelvic Floor",
+    shortDesc: "Evidence-based therapy for pelvic floor dysfunction and women's health.",
+    fullDesc: "Our women's health physiotherapists specialise in pelvic floor disorders including incontinence, prolapse, pelvic pain, and sexual dysfunction. Treatment combines internal and external assessment, biofeedback, therapeutic exercise, and education for lasting resolution of often-undertreated conditions.",
+    whoFor: "Women experiencing urinary or bowel incontinence, pelvic organ prolapse, pelvic girdle pain, endometriosis-related pain, vaginismus, or post-gynecological surgery recovery.",
+    howItWorks: "A confidential assessment includes pelvic floor muscle function testing. Treatment combines pelvic floor techniques, biofeedback, education, and a tailored home exercise program.",
+    image: "https://picsum.photos/seed/womenshealth/800/500",
+    duration: "60 min", sessions: "6–12 sessions",
+  },
+  {
+    id: 20, category: "Pediatric & Women's", badge: "bg-pink-100 text-pink-700",
+    title: "Pre & Post-Natal Care",
+    shortDesc: "Safe physiotherapy support throughout pregnancy and postpartum recovery.",
+    fullDesc: "Pregnancy places unique demands on the body — pelvic girdle pain, diastasis recti, back pain, and carpal tunnel are common. Our prenatal and postnatal programs address these conditions safely, prepare the body for labour, and support return to exercise after birth with evidence-based, gentle progressions.",
+    whoFor: "Pregnant individuals managing pelvic girdle pain, back pain, or carpal tunnel, and postpartum women recovering from birth, managing diastasis recti, or returning to exercise.",
+    howItWorks: "Evidence-based, safe exercise progressions are tailored to each trimester or postpartum stage. Pelvic floor assessment and core rehabilitation form the foundation of the program.",
+    image: "https://picsum.photos/seed/prenatal/800/500",
+    duration: "45–60 min", sessions: "6–10 sessions",
+  },
+];
+
+const categories = [
+  "All",
+  "Rehabilitation",
+  "Sports & Performance",
+  "Neurological",
+  "Pain Management",
+  "Pediatric & Women's",
+];
+---
+
+<section id="services" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block bg-purple-50 border border-purple-200 text-purple-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        Our Specialties
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+        Comprehensive Care for <span class="gradient-text">Every<br class="hidden sm:block" />Need</span>
+      </h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+        Our team of certified physiotherapists offers 20+ specialized treatments across five disciplines to help you recover, strengthen, and thrive.
+      </p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex gap-2 overflow-x-auto pb-3 mb-10 -mx-4 px-4 snap-x">
+      {categories.map((cat, i) => (
+        <button
+          class:list={[
+            "tab-btn snap-start flex-none whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200",
+            i === 0
+              ? "bg-purple-600 text-white shadow-md shadow-purple-200"
+              : "bg-white text-slate-600 border border-slate-200 hover:border-purple-300 hover:text-purple-600"
+          ]}
+          data-cat={cat}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Service Cards Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="services-grid">
+      {services.map((s) => (
+        <div
+          class="service-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group"
+          data-category={s.category}
+          data-id={String(s.id)}
+        >
+          <div class="relative overflow-hidden h-44">
+            <img
+              src={s.image}
+              alt={s.title}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+          <div class="p-5">
+            <span class={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 ${s.badge}`}>
+              {s.category}
+            </span>
+            <h3 class="text-[15px] font-bold text-slate-900 mb-2 leading-snug">{s.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-2">{s.shortDesc}</p>
+            <div class="flex gap-2 flex-wrap mb-4">
+              <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full">⏱ {s.duration}</span>
+              <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full">📅 {s.sessions}</span>
+            </div>
+            <button
+              class="view-details-btn text-sm font-semibold text-purple-600 hover:text-purple-800 flex items-center gap-1 transition-colors"
+              data-id={String(s.id)}
+            >
+              View Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Show More button (visible on "All" tab only) -->
+    <div class="text-center mt-8" id="show-more-wrapper">
+      <button
+        id="show-more-btn"
+        class="inline-flex items-center gap-2 bg-white border-2 border-purple-200 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-200 shadow-sm"
+      >
+        <span id="show-more-label">Show More Services</span>
+        <svg id="show-more-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Result count -->
+    <p class="text-center text-slate-400 text-sm mt-4" id="result-count">
+      Showing 8 of {services.length} services
+    </p>
+
+  </div>
+</section>
+
+<!-- ── Modal ───────────────────────────────────────────────────────────────── -->
+<div
+  id="service-modal"
+  class="fixed inset-0 z-50 hidden overflow-y-auto"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+>
+  <div id="modal-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <div class="relative flex min-h-full items-center justify-center p-4 sm:p-6">
+    <div id="modal-card" class="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden">
+
+      <!-- Close -->
+      <button
+        id="modal-close"
+        class="absolute top-4 right-4 z-20 w-9 h-9 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-500 hover:text-slate-900 shadow-md transition-colors"
+        aria-label="Close dialog"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Image -->
+      <img id="modal-img" src="" alt="" class="w-full h-56 sm:h-64 object-cover" />
+
+      <!-- Content -->
+      <div class="p-6 sm:p-8">
+        <span id="modal-badge" class="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3"></span>
+        <h2 id="modal-title" class="text-2xl font-extrabold text-slate-900 mb-3"></h2>
+        <p id="modal-desc" class="text-slate-600 leading-relaxed mb-5 text-[15px]"></p>
+
+        <!-- Who it's for + How it works -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-5">
+          <div class="bg-violet-50 border border-violet-100 rounded-xl p-4">
+            <p class="text-xs font-bold text-violet-600 uppercase tracking-wide mb-2">Who It's For</p>
+            <p id="modal-whofor" class="text-slate-700 text-sm leading-relaxed"></p>
+          </div>
+          <div class="bg-purple-50 border border-purple-100 rounded-xl p-4">
+            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">How It Works</p>
+            <p id="modal-howitworks" class="text-slate-700 text-sm leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- Duration + Sessions -->
+        <div class="grid grid-cols-2 gap-3 mb-7">
+          <div class="bg-slate-50 rounded-xl p-4">
+            <p class="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Session Duration</p>
+            <p id="modal-duration" class="font-bold text-slate-900 text-sm"></p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-4">
+            <p class="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Recommended</p>
+            <p id="modal-sessions" class="font-bold text-slate-900 text-sm"></p>
+          </div>
+        </div>
+
+        <a
+          href="#contact"
+          class="block text-center bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3.5 rounded-xl transition-colors"
+        >
+          Book a Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ services }}>
+  const INITIAL_LIMIT = 8;
+
+  const tabs         = document.querySelectorAll('.tab-btn');
+  const cards        = document.querySelectorAll('.service-card');
+  const countEl      = document.getElementById('result-count');
+  const showMoreWrap = document.getElementById('show-more-wrapper');
+  const showMoreBtn  = document.getElementById('show-more-btn');
+  const showMoreLbl  = document.getElementById('show-more-label');
+  const showMoreIcon = document.getElementById('show-more-icon');
+
+  let currentCat = 'All';
+  let expanded   = false;
+
+  // ── Display logic ──────────────────────────────────────────────────────────
+  function applyDisplay() {
+    const isAll = currentCat === 'All';
+    let shown = 0;
+    let total = 0;
+
+    cards.forEach(card => {
+      const matches = isAll || card.dataset.category === currentCat;
+      if (matches) total++;
+      const visible = matches && (!isAll || expanded || shown < INITIAL_LIMIT);
+      card.style.display = visible ? '' : 'none';
+      if (visible) shown++;
+    });
+
+    // Count label
+    if (countEl) {
+      if (isAll && !expanded) {
+        countEl.textContent = `Showing ${shown} of ${total} services`;
+      } else if (isAll) {
+        countEl.textContent = `Showing all ${total} services`;
+      } else {
+        countEl.textContent = `${total} service${total !== 1 ? 's' : ''} in ${currentCat}`;
+      }
+    }
+
+    // Show More button: only on "All" tab when there are more cards
+    if (isAll && total > INITIAL_LIMIT) {
+      showMoreWrap.style.display = '';
+      showMoreLbl.textContent = expanded
+        ? 'Show Less'
+        : `Show ${total - INITIAL_LIMIT} More Services`;
+      showMoreIcon.style.transform = expanded ? 'rotate(180deg)' : '';
+    } else {
+      showMoreWrap.style.display = 'none';
+    }
+  }
+
+  // ── Tab clicks ─────────────────────────────────────────────────────────────
+  function setActiveTab(activeBtn) {
+    tabs.forEach(t => {
+      t.classList.remove('bg-purple-600', 'text-white', 'shadow-md', 'shadow-purple-200');
+      t.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+    });
+    activeBtn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+    activeBtn.classList.add('bg-purple-600', 'text-white', 'shadow-md', 'shadow-purple-200');
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCat = btn.dataset.cat;
+      expanded   = false;
+      setActiveTab(btn);
+      applyDisplay();
+    });
+  });
+
+  // ── Show More / Less ───────────────────────────────────────────────────────
+  showMoreBtn.addEventListener('click', () => {
+    expanded = !expanded;
+    applyDisplay();
+    if (!expanded) {
+      document.getElementById('services-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Initial render
+  applyDisplay();
+
+  // ── Modal ──────────────────────────────────────────────────────────────────
+  const modal        = document.getElementById('service-modal');
+  const modalClose   = document.getElementById('modal-close');
+  const modalBackdrop = document.getElementById('modal-backdrop');
+
+  function openModal(id) {
+    const s = services.find(s => s.id === id);
+    if (!s) return;
+    document.getElementById('modal-img').src = s.image;
+    document.getElementById('modal-img').alt = s.title;
+    const badge = document.getElementById('modal-badge');
+    badge.textContent = s.category;
+    badge.className = `inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3 ${s.badge}`;
+    document.getElementById('modal-title').textContent = s.title;
+    document.getElementById('modal-desc').textContent = s.fullDesc;
+    document.getElementById('modal-whofor').textContent = s.whoFor;
+    document.getElementById('modal-howitworks').textContent = s.howItWorks;
+    document.getElementById('modal-duration').textContent = s.duration;
+    document.getElementById('modal-sessions').textContent = s.sessions;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.view-details-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      openModal(parseInt(btn.dataset.id));
+    });
+  });
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => openModal(parseInt(card.dataset.id)));
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.getElementById('modal-card').addEventListener('click', e => e.stopPropagation());
+</script>

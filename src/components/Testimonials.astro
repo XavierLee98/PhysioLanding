@@ -1,0 +1,105 @@
+---
+const reviews = [
+  {
+    name: 'Sarah Mitchell',
+    date: 'March 2025',
+    stars: 5,
+    text: 'After my ACL reconstruction I was terrified I would never get back on the field. The team here designed a return-to-sport program that was both challenging and safe. Six months later I competed in my first tournament — stronger than before the injury.',
+    service: 'Sports Medicine',
+  },
+  {
+    name: 'David Lim',
+    date: 'January 2025',
+    stars: 5,
+    text: 'Three years of chronic lower back pain — two doctors, multiple medications, no lasting relief. After 10 sessions of spinal rehabilitation here, I am pain-free and back to cycling. I only wish I had come sooner.',
+    service: 'Spinal Rehabilitation',
+  },
+  {
+    name: 'Priya Nair',
+    date: 'February 2025',
+    stars: 5,
+    text: 'The vestibular therapy completely resolved my BPPV vertigo. I had been dizzy for months and was afraid to drive. After just 4 sessions the dizziness was gone. The therapist explained everything clearly and I felt confident throughout.',
+    service: 'Balance & Vestibular Therapy',
+  },
+  {
+    name: 'James Okonkwo',
+    date: 'December 2024',
+    stars: 5,
+    text: 'My mother had a stroke and we were devastated. The neurological rehab team were not only clinically excellent but genuinely compassionate. Eight months on, she is walking independently and managing most of her daily tasks. We are so grateful.',
+    service: 'Stroke Recovery',
+  },
+  {
+    name: 'Tan Wei Ling',
+    date: 'April 2025',
+    stars: 5,
+    text: 'I came in with severe knee pain that was stopping me from running. The biomechanical assessment identified issues I never knew I had. The injury prevention and performance training program changed how I move entirely. No pain in four months.',
+    service: 'Injury Prevention',
+  },
+  {
+    name: 'Rachel Fernandez',
+    date: 'November 2024',
+    stars: 5,
+    text: 'The post-natal pelvic floor program gave me my confidence back after a difficult birth. It is not something many people talk about openly but the care here was discreet, professional, and genuinely effective. I highly recommend it to any new mother.',
+    service: "Women's Health",
+  },
+];
+---
+
+<section id="testimonials" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="inline-block bg-purple-50 border border-purple-200 text-purple-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        Patient Stories
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+        What Our Patients <span class="gradient-text">Say</span>
+      </h2>
+
+      <!-- Rating bar -->
+      <div class="inline-flex items-center gap-3 bg-white border border-slate-100 shadow-sm rounded-2xl px-6 py-3 mt-2">
+        <div class="flex gap-0.5">
+          {[1,2,3,4,5].map(() => (
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          ))}
+        </div>
+        <span class="font-extrabold text-slate-900 text-lg">4.9</span>
+        <span class="text-slate-400 text-sm">rated on Google &amp; Facebook</span>
+      </div>
+    </div>
+
+    <!-- Review grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {reviews.map((r) => (
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+          <!-- Stars -->
+          <div class="flex gap-0.5 mb-4">
+            {[1,2,3,4,5].map((i) => (
+              <svg class={`w-4 h-4 ${i <= r.stars ? 'text-amber-400' : 'text-slate-200'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+
+          <!-- Text -->
+          <p class="text-slate-600 text-sm leading-relaxed flex-1 mb-5">"{r.text}"</p>
+
+          <!-- Footer -->
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <div>
+              <p class="font-bold text-slate-900 text-sm">{r.name}</p>
+              <p class="text-xs text-slate-400">{r.date}</p>
+            </div>
+            <span class="text-xs bg-purple-50 text-purple-600 font-semibold px-2.5 py-1 rounded-full">
+              {r.service}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

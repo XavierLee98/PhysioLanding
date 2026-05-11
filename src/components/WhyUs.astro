@@ -1,0 +1,56 @@
+---
+const features = [
+  {
+    title: 'Certified Experts',
+    desc: 'Licensed physiotherapists with advanced certifications and years of clinical experience.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />`,
+  },
+  {
+    title: 'Personalized Care',
+    desc: 'Individual treatment plans tailored to your specific needs, goals, and recovery timeline.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />`,
+  },
+  {
+    title: 'Prime Location',
+    desc: 'Easily accessible facility with modern equipment and ample parking in the heart of the medical district.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />`,
+  },
+  {
+    title: 'Flexible Hours',
+    desc: 'Extended hours to fit your busy schedule, including early mornings and Saturdays.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+  },
+];
+---
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Feature cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      {features.map((f) => (
+        <div class="bg-slate-50 rounded-2xl p-6 text-center hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={f.icon} />
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">{f.title}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA banner -->
+    <div class="text-center bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl py-16 px-6">
+      <span class="inline-block bg-white border border-purple-200 text-purple-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        Get in Touch
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+        Ready to Start Your <span class="gradient-text">Recovery<br />Journey?</span>
+      </h2>
+      <p class="text-slate-500 text-lg max-w-xl mx-auto mb-8">
+        Contact us today to schedule your consultation and take the first step towards a healthier, more active you.
+      </p>
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
+    </div>
+
+  </div>
+</section>

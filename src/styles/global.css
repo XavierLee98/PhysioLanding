@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity;
+  }
+  .btn-outline {
+    @apply border-2 border-purple-600 text-purple-600 font-semibold px-6 py-3 rounded-full hover:bg-purple-50 transition-colors;
+  }
+}
